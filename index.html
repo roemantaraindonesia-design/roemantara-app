@@ -28,13 +28,20 @@ small{color:#9FB3A8;margin-top:14px;font-size:12px;line-height:1.5}
   <h1>ROEMANTARA</h1>
   <p>Dashboard Operasional</p>
   <a class="btn" id="go" href="https://claude.ai/artifact/9f4wUfPED2WDpBVno6c2cq">Buka Dashboard</a>
-  <small id="hint">Membuka dashboard…<br>Pastikan sudah masuk (login) ke akun Claude di HP ini.</small>
+  <small id="hint">Buat shortcut dari halaman ini:<br>Android (Chrome): menu ⋮ &rsaquo; Tambahkan ke layar utama<br>iPhone (Safari): Bagikan &rsaquo; Tambah ke Layar Utama<br><br>Pastikan sudah masuk (login) ke akun Claude di HP ini.</small>
 </main>
 <script>
 (function(){
   var url = document.getElementById('go').href;
-  /* langsung teruskan ke dashboard; tombol tetap ada bila peramban menahan pengalihan */
-  setTimeout(function(){ location.replace(url); }, 700);
+  /* Hanya teruskan otomatis bila dibuka dari shortcut layar utama (?app=1 atau mode aplikasi).
+     Dibuka biasa di browser: tetap di halaman ini supaya shortcut dibuat dengan logo Roemantara. */
+  var fromShortcut = /[?&]app=1\b/.test(location.search) ||
+    (window.matchMedia && matchMedia('(display-mode: standalone)').matches) ||
+    window.navigator.standalone === true;
+  if (fromShortcut) {
+    document.getElementById('hint').innerHTML = 'Membuka dashboard…<br>Pastikan sudah masuk (login) ke akun Claude di HP ini.';
+    setTimeout(function(){ location.replace(url); }, 500);
+  }
 })();
 </script>
 </body>

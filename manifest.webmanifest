@@ -2,7 +2,7 @@
   "name": "Roemantara Dashboard Operasional",
   "short_name": "Roemantara",
   "description": "Dashboard Operasional Roemantara Indonesia",
-  "start_url": "./",
+  "start_url": "./?app=1",
   "scope": "./",
   "display": "browser",
   "background_color": "#173A2B",
