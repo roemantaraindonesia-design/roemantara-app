@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Roemantara</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#173A2B">
+<meta name="apple-mobile-web-app-title" content="Roemantara">
+<meta name="application-name" content="Roemantara">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+html,body{height:100%;margin:0}
+body{background:#173A2B;color:#F3EFE6;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;text-align:center}
+main{display:flex;flex-direction:column;align-items:center;gap:10px;max-width:360px}
+img{width:132px;height:132px;border-radius:28px;display:block}
+h1{margin:12px 0 0;font-size:26px;letter-spacing:.22em;font-weight:600;padding-left:.22em}
+p{margin:0;color:#C9B99A;font-size:14px}
+a.btn{margin-top:22px;display:inline-block;background:#C9B99A;color:#173A2B;text-decoration:none;font-weight:600;padding:14px 28px;border-radius:12px;font-size:16px}
+small{color:#9FB3A8;margin-top:14px;font-size:12px;line-height:1.5}
+</style>
+</head>
+<body>
+<main>
+  <img src="icon-192.png" alt="Logo Roemantara" width="132" height="132">
+  <h1>ROEMANTARA</h1>
+  <p>Dashboard Operasional</p>
+  <a class="btn" id="go" href="https://claude.ai/artifact/9f4wUfPED2WDpBVno6c2cq">Buka Dashboard</a>
+  <small id="hint">Membuka dashboard…<br>Pastikan sudah masuk (login) ke akun Claude di HP ini.</small>
+</main>
+<script>
+(function(){
+  var url = document.getElementById('go').href;
+  /* langsung teruskan ke dashboard; tombol tetap ada bila peramban menahan pengalihan */
+  setTimeout(function(){ location.replace(url); }, 700);
+})();
+</script>
+</body>
+</html>
